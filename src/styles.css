@@ -1,0 +1,169 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-cedar: var(--cedar);
+  --color-cedar-glow: var(--cedar-glow);
+  --color-gold: var(--gold);
+  --color-deep: var(--deep);
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+:root {
+  --radius: 0.75rem;
+  /* Deep marine teal background from logo */
+  --background: oklch(0.18 0.04 200);
+  --deep: oklch(0.13 0.035 205);
+  --foreground: oklch(0.97 0.01 180);
+
+  --card: oklch(0.22 0.04 200);
+  --card-foreground: oklch(0.97 0.01 180);
+  --popover: oklch(0.20 0.04 200);
+  --popover-foreground: oklch(0.97 0.01 180);
+
+  /* Neon cedar green */
+  --cedar: oklch(0.82 0.22 155);
+  --cedar-glow: oklch(0.90 0.20 165);
+  --primary: oklch(0.82 0.22 155);
+  --primary-foreground: oklch(0.15 0.04 200);
+
+  --secondary: oklch(0.28 0.045 200);
+  --secondary-foreground: oklch(0.97 0.01 180);
+  --muted: oklch(0.25 0.035 200);
+  --muted-foreground: oklch(0.72 0.03 190);
+  --accent: oklch(0.65 0.18 195);
+  --accent-foreground: oklch(0.13 0.035 205);
+
+  /* Gold from coin */
+  --gold: oklch(0.82 0.13 85);
+
+  --destructive: oklch(0.65 0.24 25);
+  --destructive-foreground: oklch(0.97 0.01 180);
+  --border: oklch(0.32 0.04 195 / 60%);
+  --input: oklch(0.28 0.04 200);
+  --ring: oklch(0.82 0.22 155);
+
+  --gradient-hero: radial-gradient(ellipse at top, oklch(0.30 0.08 185 / 0.6), transparent 60%),
+                   linear-gradient(180deg, oklch(0.13 0.035 205) 0%, oklch(0.18 0.04 200) 100%);
+  --gradient-cedar: linear-gradient(135deg, oklch(0.82 0.22 155), oklch(0.70 0.20 185));
+  --gradient-gold: linear-gradient(135deg, oklch(0.85 0.13 85), oklch(0.70 0.14 65));
+  --gradient-text: linear-gradient(135deg, oklch(0.97 0.01 180) 0%, oklch(0.82 0.22 155) 100%);
+
+  --shadow-glow: 0 0 60px oklch(0.82 0.22 155 / 0.35);
+  --shadow-cedar: 0 20px 60px -20px oklch(0.82 0.22 155 / 0.5);
+  --shadow-card: 0 10px 40px -10px oklch(0.05 0.02 200 / 0.6);
+}
+
+.dark {
+  --background: oklch(0.18 0.04 200);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(circle at 20% 10%, oklch(0.30 0.08 185 / 0.25), transparent 50%),
+      radial-gradient(circle at 80% 90%, oklch(0.40 0.18 155 / 0.12), transparent 50%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-cedar-gradient {
+    background: var(--gradient-cedar);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(oklch(0.82 0.22 155 / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.82 0.22 155 / 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .glow-cedar {
+    box-shadow: var(--shadow-cedar);
+  }
+  .glass {
+    background: oklch(0.22 0.04 200 / 0.55);
+    backdrop-filter: blur(14px);
+    border: 1px solid oklch(0.82 0.22 155 / 0.15);
+  }
+  .glass-strong {
+    background: oklch(0.20 0.04 200 / 0.75);
+    backdrop-filter: blur(20px);
+    border: 1px solid oklch(0.82 0.22 155 / 0.20);
+  }
+  .ring-cedar {
+    box-shadow: 0 0 0 1px oklch(0.82 0.22 155 / 0.3), 0 0 40px oklch(0.82 0.22 155 / 0.25);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+.animate-ticker { animation: ticker 40s linear infinite; }
