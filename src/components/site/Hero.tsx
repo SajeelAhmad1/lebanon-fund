@@ -1,3 +1,4 @@
+import MaxWidth from "../ui/max-width";
 import { BuyWidget } from "./BuyWidget";
 
 export function Hero() {
@@ -8,7 +9,7 @@ export function Hero() {
       <div className="absolute top-20 left-1/2 -translate-x-1/2 h-[300px] sm:h-[500px] w-[600px] sm:w-[900px] max-w-full rounded-full bg-primary/20 blur-[100px] sm:blur-[140px] -z-0" />
       <div className="absolute bottom-0 right-0 h-[250px] sm:h-[400px] w-[250px] sm:w-[400px] rounded-full bg-accent/15 blur-[100px] sm:blur-[120px]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
+      <MaxWidth className="relative">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-7 order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 rounded-full glass px-3 sm:px-4 py-1.5 mb-5 sm:mb-6">
@@ -21,7 +22,7 @@ export function Hero() {
               </span>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1] tracking-tight">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1] tracking-tight lg:max-w-[650px] ">
               Global crypto access to
               <span className="block text-cedar-gradient">Lebanese markets.</span>
             </h1>
@@ -78,7 +79,7 @@ export function Hero() {
             <BuyWidget />
           </div>
         </div>
-      </div>
+      </MaxWidth>
     </section>
   );
 }

@@ -1,3 +1,5 @@
+import MaxWidth from "../ui/max-width";
+
 export function Vision() {
   const pillars = [
     {
@@ -31,10 +33,10 @@ export function Vision() {
         <div className="absolute bottom-1/4 right-1/4 h-[250px] sm:h-[400px] w-[250px] sm:w-[400px] rounded-full bg-accent/10 blur-[100px] sm:blur-[120px]" />
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <MaxWidth >
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-end mb-12 sm:mb-20">
           <div>
-            <div className="text-[10px] sm:text-xs font-mono tracking-[0.3em] text-primary mb-3 sm:mb-4">VISION</div>
+            <div className="text-[10px] sm:text-xs font-mono tracking-[0.3em] text-primary mb-3 sm:mb-4 bg-[#00EB81]/15 rounded-full px-4 py-2 max-w-max">VISION</div>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               The coordination layer for a{" "}
               <span className="text-cedar-gradient">resilient Lebanon Fund.</span>
@@ -99,7 +101,7 @@ export function Vision() {
             ))}
           </div>
         </div>
-      </div>
+      </MaxWidth>
     </section>
   );
 }

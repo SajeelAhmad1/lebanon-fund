@@ -1,3 +1,5 @@
+import MaxWidth from "../ui/max-width";
+
 export function Ticker() {
   const items = [
     "DIASPORA CAPITAL",
@@ -11,7 +13,7 @@ export function Ticker() {
   ];
   const doubled = [...items, ...items];
   return (
-    <div className="relative border-y border-border/50 bg-deep/50 overflow-hidden py-3 sm:py-5">
+    <MaxWidth className="relative border-y border-border/50 bg-deep/50 overflow-hidden py-3 sm:py-5">
       <div className="flex animate-ticker whitespace-nowrap">
         {doubled.map((t, i) => (
           <span key={i} className="flex items-center gap-3 sm:gap-6 px-3 sm:px-6 font-display text-base sm:text-2xl font-bold">
@@ -20,6 +22,6 @@ export function Ticker() {
           </span>
         ))}
       </div>
-    </div>
+    </MaxWidth>
   );
 }

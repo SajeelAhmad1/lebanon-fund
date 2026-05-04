@@ -1,15 +1,16 @@
 import heroImg from "@/assets/logo.png?url";
 import xSvg from "@/assets/x.svg?url";
 import telegramSvg from "@/assets/telegram.svg?url";
+import MaxWidth from "../ui/max-width";
 
 export function Footer() {
   const links = ["Vision", "Solana", "Tokenomics", "Strategy", "Roadmap", "Whitepaper"];
 
   return (
     <footer className="relative pb-0 px-4 sm:px-8">
-      <div
-        className="mx-auto px-8 sm:px-12 pt-10 pb-8 flex flex-col min-h-[220px]"
-        style={{ background: "#042F32B2", borderRadius: "22px 22px 0 0" }}
+      <MaxWidth
+        className="pt-10 pb-8 flex flex-col min-h-[220px] bg-[#042F32B2] rounded-tr-[22px] rounded-bl-none"
+        // style={{ background: "#042F32B2", borderRadius: "22px 22px 0 0" }}
       >
         {/* two-column layout with equal baseline */}
         <div className="flex justify-between gap-8 mb-6">
@@ -68,7 +69,7 @@ export function Footer() {
         <div className="text-xs font-mono text-muted-foreground mt-6 text-center">
           © {new Date().getFullYear()} LEBANON FUND — ALL RIGHTS RESERVED
         </div>
-      </div>
+      </MaxWidth>
     </footer>
   );
 }

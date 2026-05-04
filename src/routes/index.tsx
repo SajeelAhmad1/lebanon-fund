@@ -25,9 +25,9 @@ function Index() {
       <Vision />
       <Tokenomics />
       <WhySolana />
+      <Roadmap />
+      {/* <CTA /> */}
       <Strategy />
-      {/* <Roadmap /> */}
-      <CTA />
       <Footer />
     </main>
   );

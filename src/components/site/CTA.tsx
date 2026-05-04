@@ -1,7 +1,9 @@
+import MaxWidth from "../ui/max-width";
+
 export function CTA() {
   return (
     <section id="join" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <MaxWidth >
         <div className="relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] glass-strong p-6 sm:p-12 lg:p-20 text-center">
           <div className="absolute inset-0 bg-grid opacity-30" />
           <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[300px] sm:h-[400px] w-[500px] sm:w-[700px] max-w-full rounded-full bg-primary/30 blur-[100px] sm:blur-[120px]" />
@@ -45,7 +47,7 @@ export function CTA() {
             </p>
           </div>
         </div>
-      </div>
+      </MaxWidth>
     </section>
   );
 }

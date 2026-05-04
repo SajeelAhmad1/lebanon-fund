@@ -1,3 +1,5 @@
+import MaxWidth from "../ui/max-width";
+
 export function WhySolana() {
   const stats = [
     { v: "65,000", u: "TPS", l: "Throughput for global participation" },
@@ -11,7 +13,7 @@ export function WhySolana() {
       <div className="absolute inset-0 bg-grid opacity-30" />
       <div className="absolute -left-40 top-1/2 -translate-y-1/2 h-[300px] sm:h-[400px] w-[300px] sm:w-[400px] rounded-full bg-accent/20 blur-[100px] sm:blur-[120px]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
+      <MaxWidth >
         <div className="flex flex-col items-center max-w-7xl mb-12 sm:mb-16">
           <div className="text-[10px] sm:text-xs font-mono tracking-[0.3em] text-primary mb-3 sm:mb-4">RAILS</div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
@@ -34,7 +36,7 @@ export function WhySolana() {
             </div>
           ))}
         </div>
-      </div>
+      </MaxWidth>
     </section>
   );
 }

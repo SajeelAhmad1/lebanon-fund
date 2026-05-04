@@ -1,3 +1,5 @@
+import MaxWidth from "../ui/max-width";
+
 export function Problem() {
   const stats = [
     { n: "2019", l: "Banking crisis began", sub: "Loss of trust in traditional finance" },
@@ -7,14 +9,14 @@ export function Problem() {
   ];
   return (
     <section id="problem" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <MaxWidth >
         <div className="max-w-7xl flex flex-col items-center">
-          <div className="text-[10px] sm:text-xs font-mono tracking-[0.3em] text-primary mb-3 sm:mb-4">CONTEXT</div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-center">
+          <div className="text-[10px] sm:text-xs font-mono tracking-[0.3em] text-primary mb-3 sm:mb-4 bg-[#00EB81]/15 rounded-full px-4 py-2">CONTEXT</div>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-center lg:max-w-[1072px]">
             A nation locked out of its own savings —{" "}
             <span className="text-muted-foreground">crypto became the workaround.</span>
           </h2>
-          <p className="mt-5 sm:mt-6 text-base sm:text-lg text-muted-foreground text-center max-w-3xl">
+          <p className="mt-5 sm:mt-6 text-base sm:text-lg text-muted-foreground text-center max-w-[745px]">
             Since 2019, banking dysfunction, capital controls, and currency collapse have pushed
             Lebanese individuals and businesses toward stablecoins and peer-to-peer rails. The
             informal fix proved blockchain works. LFUND formalizes it.
@@ -36,7 +38,7 @@ export function Problem() {
             </div>
           ))}
         </div>
-      </div>
+      </MaxWidth>
     </section>
   );
 }

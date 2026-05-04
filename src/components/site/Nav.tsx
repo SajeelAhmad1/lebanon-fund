@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import heroImg from "@/assets/logo.png?url";
+import MaxWidth from "../ui/max-width";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -24,7 +25,7 @@ export function Nav() {
         scrolled ? "py-2 sm:py-3" : "py-3 sm:py-5"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-3 sm:px-6">
+      <MaxWidth>
         <div
           className={`flex items-center justify-between rounded-full px-3 sm:px-5 py-2.5 sm:py-3 transition-all glass-strong`}
         >
@@ -111,7 +112,7 @@ export function Nav() {
             </nav>
           </div>
         )}
-      </div>
+      </MaxWidth>
     </header>
   );
 }
