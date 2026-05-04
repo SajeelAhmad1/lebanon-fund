@@ -205,7 +205,7 @@ export function Strategy() {
                 type="button"
                 className="rounded-full bg-[#00EB81] px-6 sm:px-7 py-3 sm:py-3.5 text-sm font-semibold text-black shadow-[0_0_40px_#00EB81/40] hover:shadow-[0_0_60px_#00EB81/70] transition-shadow whitespace-nowrap"
               >
-                Reserve allocation
+                Reserve allocation 
               </button>
             </div>
 
