@@ -75,7 +75,7 @@ export function Strategy() {
         {/* Hexagon cards */}
         <div
           ref={sectionRef}
-          className="flex flex-col sm:flex-row items-center justify-center -space-y-28 sm:-space-y-0 sm:-space-x-6"
+          className="flex flex-col sm:flex-row items-center justify-center -space-y-6 sm:-space-y-0 sm:-space-x-6"
         >
           {pillars.map((p, i) => {
             const isHov = hovered === i;
@@ -98,8 +98,10 @@ export function Strategy() {
                 <div
                   className="relative flex items-center justify-center"
                   style={{
-                    width: "clamp(160px, 22vw, 220px)",
-                    height: "clamp(175px, 24vw, 240px)",
+                    // width: "clamp(160px, 22vw, 220px)",
+                    // height: "clamp(175px, 24vw, 240px)",
+                    width: "254px",
+                    height: "254px",
                     transform: isHov ? "scale(1.07)" : "scale(1)",
                     transition: "transform 0.4s cubic-bezier(0.34,1.56,0.64,1)",
                   }}
@@ -108,13 +110,13 @@ export function Strategy() {
                   <img 
                     src={shadowBG} 
                     alt="shadow" 
-                    className="absolute inset-0 w-full h-full hidden md:block"
+                    className="absolute inset-0 w-full h-full "
                     style={{
                       filter: isHov ? `drop-shadow(0 0 20px ${color})` : "none",
                       transition: "filter 0.4s ease",
                     }}
                   />
-                  <img 
+                  {/* <img 
                     src={shadowBGMobile} 
                     alt="shadow" 
                     className="absolute inset-0 w-[254px] h-[254px] md:hidden"
@@ -122,10 +124,10 @@ export function Strategy() {
                       filter: isHov ? `drop-shadow(0 0 20px ${color})` : "none",
                       transition: "filter 0.4s ease",
                     }}
-                  />
+                  /> */}
 
                   {/* content */}
-                  <div className="relative z-10 flex flex-col items-center text-center px-4">
+                  <div className="relative z-10 flex flex-col items-center text-center gap-3 px-4">
                     <div
                       className="font-bold text-[24px] tracking-[0.3em] mb-1 text-white"
                       // style={{ color: isHov ? color : "#666666" }}
@@ -157,7 +159,7 @@ export function Strategy() {
 
                 {/* Tooltip description on hover */}
                 <div
-                  className="mt-4 max-w-[220px] text-center text-xs text-gray-400 leading-relaxed"
+                  className="mt-4 max-w-[220px] text-center text-xs text-gray-400 leading-relaxed hidden lg:block"
                   style={{
                     opacity: isHov ? 1 : 0,
                     transform: isHov ? "translateY(0)" : "translateY(8px)",

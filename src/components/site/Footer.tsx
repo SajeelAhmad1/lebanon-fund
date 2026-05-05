@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="relative pb-0 px-4 sm:px-8">
       <MaxWidth
-        className="pt-10 pb-8 flex flex-col min-h-[220px] bg-[#042F32B2] rounded-tr-[22px] rounded-bl-none"
+        className="pt-10 pb-8 flex flex-col min-h-[220px] bg-[#042F32B2] rounded-t-[22px] rounded-bl-none"
         // style={{ background: "#042F32B2", borderRadius: "22px 22px 0 0" }}
       >
         {/* two-column layout with equal baseline */}
@@ -46,7 +46,7 @@ export function Footer() {
                 <a
                   key={l}
                   href={`#${l.toLowerCase()}`}
-                  className="text-sm text-white hover:text-foreground transition-colors"
+                  className="text-sm text-white hover:text-foreground/80 transition-colors"
                 >
                   {l}
                 </a>
