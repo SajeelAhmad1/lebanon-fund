@@ -26,7 +26,7 @@ export function Vision() {
   ];
 
   return (
-    <section id="vision" className="relative py-20 sm:py-32 overflow-hidden">
+    <section id="vision" className="relative py-20 overflow-hidden">
       {/* ambient background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/3 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-primary/10 blur-[100px] sm:blur-[120px]" />

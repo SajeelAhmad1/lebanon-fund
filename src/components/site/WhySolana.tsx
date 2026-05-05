@@ -11,7 +11,7 @@ export function WhySolana() {
   return (
     <section
       id='solana'
-      className='relative py-20 sm:py-28 overflow-hidden'
+      className='relative py-20  overflow-hidden'
     >
       <div className='absolute inset-0 bg-grid opacity-30' />
       <div className='absolute -left-40 top-1/2 -translate-y-1/2 h-[300px] sm:h-[400px] w-[300px] sm:w-[400px] rounded-full bg-accent/20 blur-[100px] sm:blur-[120px]' />

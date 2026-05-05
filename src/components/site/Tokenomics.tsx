@@ -57,7 +57,7 @@ export function Tokenomics() {
   const focusSeg = focusIdx !== null ? segments[focusIdx] : null;
 
   return (
-    <section id="tokenomics" className="relative py-20 sm:py-28 overflow-hidden">
+    <section id="tokenomics" className="relative py-20  overflow-hidden">
       {/* ambient glows */}
       <div className="absolute top-1/4 left-1/4 h-[400px] w-[400px] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 h-[300px] w-[300px] rounded-full bg-accent/10 blur-[100px] pointer-events-none" />
