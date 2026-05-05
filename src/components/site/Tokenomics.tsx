@@ -129,12 +129,11 @@ export function Tokenomics() {
               })}
 
               {/* Center hole content */}
-              <foreignObject x={CX - 80} y={CY - 68} width={160} height={136}>
+              <foreignObject x={CX - 95} y={CY - 95} width={189} height={189}>
                 <div
-                  className="w-full h-full flex flex-col items-center justify-center text-center"
+                  className="w-full h-full flex flex-col items-center justify-center text-center rounded-full"
                   style={{
-                    background: "oklch(0.18 0.04 200)",
-                    borderRadius: "50%",
+                    background: "#001718", 
                   }}
                 >
                   {focusSeg ? (
@@ -225,9 +224,9 @@ export function Tokenomics() {
                 </div>
               );
             })}
-            <p className="text-[11px] sm:text-xs text-muted-foreground pt-3">
+            {/* <p className="text-[11px] sm:text-xs text-muted-foreground pt-3">
               * Illustrative — final tokenomics confirmed after legal, tax &amp; securities review.
-            </p>
+            </p> */}
           </div>
         </div>
       </MaxWidth>

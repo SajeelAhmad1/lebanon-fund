@@ -20,7 +20,7 @@ const phases = [
     num: '02',
     label: 'Phase 2',
     title: 'Token Architecture & Audit',
-    badge: 'NOW',
+    // badge: 'NOW',
     items: [
       'SPL token deployment',
       'Multisig treasury programs',
@@ -31,7 +31,7 @@ const phases = [
     num: '03',
     label: 'Phase 3',
     title: 'Pilot & Treasury Reporting',
-    badge: 'NEXT',
+    // badge: 'NEXT',
     items: [
       'Phased public rollout',
       'Reserve dashboards & oracles',
@@ -42,7 +42,7 @@ const phases = [
     num: '04',
     label: 'Phase 4',
     title: 'Ecosystem Activation',
-    badge: 'MID',
+    // badge: 'MID',
     items: [
       'Solana-native staking',
       'Governance portal launch',
@@ -84,7 +84,10 @@ export function Roadmap() {
         {/* ================= MOBILE (STACK) ================= */}
         <div className='flex flex-col gap-8 lg:hidden'>
           {phases.map((phase, i) => (
-            <div key={i} className='w-full max-w-[360px] mx-auto'>
+            <div
+              key={i}
+              className='w-full max-w-[360px] mx-auto'
+            >
               <Card phase={phase} />
             </div>
           ))}
@@ -104,11 +107,16 @@ export function Roadmap() {
                   key={i}
                   className={cn(
                     'relative flex flex-col items-center',
-                    isEven ? 'mt-0' : 'mt-[344px]'
+                    isEven ? 'mt-0' : 'mt-[344px]',
                   )}
                 >
                   {/* TOP connector */}
-                  {!isEven && <Connector type='top' label={phase.label} />}
+                  {!isEven && (
+                    <Connector
+                      type='top'
+                      label={phase.label}
+                    />
+                  )}
 
                   {/* Card */}
                   <div className='w-[340px] sm:w-[378px]'>
@@ -116,7 +124,12 @@ export function Roadmap() {
                   </div>
 
                   {/* BOTTOM connector */}
-                  {isEven && <Connector type='bottom' label={phase.label} />}
+                  {isEven && (
+                    <Connector
+                      type='bottom'
+                      label={phase.label}
+                    />
+                  )}
                 </div>
               );
             })}
@@ -133,22 +146,23 @@ function Card({ phase }: any) {
     <div className='bg-[#D9D9D9] rounded-[8px] p-3'>
       <div className='bg-[#001718] rounded-b-2xl rounded-t-[80px] p-6'>
         <div className='flex justify-between mb-4 px-6'>
-          <span className='text-[#01C853] text-xs'>
-            Phase {phase.num}
-          </span>
+          <span className='text-[#01C853] text-xs'>Phase {phase.num}</span>
 
-          <span className='text-[10px] text-[#00EB81] bg-[#00EB81]/20 px-2 py-0.5 rounded-full'>
-            {phase.badge}
-          </span>
+          {phase?.badge && (
+            <span className='text-[10px] text-[#00EB81] bg-[#00EB81]/20 px-2 py-0.5 rounded-full'>
+              {phase.badge}
+            </span>
+          )}
         </div>
 
-        <h3 className='text-[#00EB81] text-lg font-bold mb-3'>
-          {phase.title}
-        </h3>
+        <h3 className='text-[#00EB81] text-lg font-bold mb-3'>{phase.title}</h3>
 
         <ul className='space-y-2'>
           {phase.items.map((item: string, i: number) => (
-            <li key={i} className='flex gap-2 text-sm text-gray-400'>
+            <li
+              key={i}
+              className='flex gap-2 text-sm text-gray-400'
+            >
               <span className='h-1.5 w-1.5 bg-gray-400 rounded-full mt-1' />
               {item}
             </li>
@@ -164,7 +178,9 @@ function Connector({ type, label }: any) {
   const isTop = type === 'top';
 
   return (
-    <div className={cn('relative flex justify-center', isTop ? 'mb-3' : 'mt-3')}>
+    <div
+      className={cn('relative flex justify-center', isTop ? 'mb-3' : 'mt-3')}
+    >
       <div className='h-[110px] w-[2px] bg-[#FFF03B]' />
 
       <ChevronUp
@@ -173,14 +189,14 @@ function Connector({ type, label }: any) {
           'text-[#FFF03B] absolute left-1/2 -translate-x-1/2',
           isTop
             ? 'bottom-0 translate-y-1/2 rotate-180'
-            : 'top-0 -translate-y-1/2'
+            : 'top-0 -translate-y-1/2',
         )}
       />
 
       <div
         className={cn(
           'w-[32px] h-[32px] bg-[#00EB81] border-[6px] border-[#E5A841] rounded-full absolute left-1/2 -translate-x-1/2',
-          isTop ? 'top-0 -translate-y-1/2' : 'bottom-0 translate-y-1/2'
+          isTop ? 'top-0 -translate-y-1/2' : 'bottom-0 translate-y-1/2',
         )}
       />
 

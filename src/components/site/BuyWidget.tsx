@@ -6,11 +6,10 @@ const TOKEN_PRICE_USD = 0.025; // $LFUND price during presale
 const SOL_PRICE_USD = 175; // indicative SOL/USD
 const MIN_SOL = 0.1;
 
-type PayCurrency = "SOL" | "USDC" | "USDT";
+type PayCurrency = "SOL" | "USDT";
 
 const currencies: { id: PayCurrency; label: string; rate: number }[] = [
   { id: "SOL", label: "SOL", rate: SOL_PRICE_USD },
-  { id: "USDC", label: "USDC", rate: 1 },
   { id: "USDT", label: "USDT", rate: 1 },
 ];
 
@@ -106,7 +105,7 @@ export function BuyWidget() {
         </div>
 
         {/* Currency tabs */}
-        <div className="mt-6 grid grid-cols-3 gap-2 p-1 rounded-xl bg-secondary/50 border border-border/60">
+        <div className="mt-6 grid grid-cols-2 gap-2 p-1 rounded-xl bg-secondary/50 border border-border/60">
           {currencies.map((c) => {
             const isActive = c.id === pay;
             return (
@@ -142,10 +141,17 @@ export function BuyWidget() {
                   setAmount(e.target.value.replace(/[^0-9.]/g, ""))
                 }
                 placeholder="0.0"
-                className="flex-1 bg-transparent outline-none font-display text-2xl font-bold text-foreground placeholder:text-muted-foreground/40"
+                className="flex-1 w-full bg-transparent outline-none font-display text-2xl font-bold text-foreground placeholder:text-muted-foreground/40"
               />
-              <div className="inline-flex items-center gap-1.5 rounded-lg bg-secondary/70 px-2.5 py-1.5 border border-border/60">
-                <img src={solImage} alt="Solana Image" />
+              <div className="inline-flex items-center gap-1.5 rounded-lg bg-secondary/70 px-2.5 py-1.5 border border-border/60 shrink-0">
+                {pay === "SOL" ? (
+                  <img src={solImage} alt="SOL" className="h-4 w-4" />
+                ) : (
+                  <svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16" r="16" fill="#26A17B"/>
+                    <path d="M17.922 17.383v-.002c-.112.008-.687.042-1.942.042-1.01 0-1.721-.03-1.971-.042v.003c-3.888-.171-6.79-.848-6.79-1.658s2.902-1.486 6.79-1.66v2.644c.254.018.982.061 1.988.061 1.207 0 1.812-.05 1.925-.06v-2.643c3.88.173 6.775.85 6.775 1.658 0 .81-2.895 1.485-6.775 1.657m0-3.59v-2.366h5.414V8H8.595v3.427h5.414v2.365c-4.4.202-7.709 1.074-7.709 2.126s3.309 1.923 7.709 2.125v7.6h3.913v-7.6c4.393-.202 7.694-1.073 7.694-2.124 0-1.051-3.301-1.923-7.694-2.126" fill="white"/>
+                  </svg>
+                )}
                 <span className="text-xs font-mono font-semibold">
                   {active.label}
                 </span>
